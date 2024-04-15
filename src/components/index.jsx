@@ -1,6 +1,6 @@
 
 
-// import { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import "./style.css";
 
 function Square({value,onClick}){
