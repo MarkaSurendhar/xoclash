@@ -64,7 +64,7 @@ const TicTacToe=()=>{
         }else{
             setStatus(`Next player is ${isXTurn ? 'X' : 'O'}`)
         }
-    },squares,isXTurn);
+    },[squares,isXTurn]);
 
     return(
         <div className="tic-tac-toe-container">
@@ -85,7 +85,7 @@ const TicTacToe=()=>{
                 <Square value={squares[8]}  onClick={()=>handleClick(8)}/>
             </div>
             <h1>{status}</h1>
-            <button onClick={handleRestart}>Restart</button>
+            <button className="btn" onClick={handleRestart}>Restart</button>
         </div>
     )
 }

@@ -20,3 +20,11 @@
     margin-top: -1px;
     cursor: pointer;
 }
+.btn{
+    color: white;
+    background-color: rgb(14, 164, 132);
+    border: none;
+    height: 25px;
+    width: 75px;
+    border-radius: 10px;
+}
