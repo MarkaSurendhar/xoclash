@@ -56,18 +56,19 @@ const TicTacToe=()=>{
         setSquares(Array(9).fill(''));
     }
 
-    useEffect(()=>{
-        if(!getWinner(squares) && squares.every(item=>item !== '')){
-            setStatus(`This is draw ! Please restart the game`)
-        }else if(getWinner(squares)){
-            setStatus(`Winner is ${getWinner(squares)}. Please restart the game`)
-        }else{
-            setStatus(`Next player is ${isXTurn ? 'X' : 'O'}`)
+    useEffect(() => {
+        if (!getWinner(squares) && squares.every(item => item !== '')) {
+            setStatus(<p className="draw-message">This is draw ! Please restart the game</p>);
+        } else if (getWinner(squares)) {
+            setStatus(<p className="winner-message">Winner is {getWinner(squares)}. Please restart the game</p>);
+        } else {
+            setStatus(<p className="next-player">Next player is {isXTurn ? 'X' : 'O'}</p>);
         }
-    },[squares,isXTurn]);
+    }, [squares, isXTurn]);
 
     return(
         <div className="tic-tac-toe-container">
+            <center><p className="text-multicolor">XO-Clash</p></center>
             <div className="row">
                 <Square value={squares[0]} onClick={()=>handleClick(0)}/>
                 <Square value={squares[1]} onClick={()=>handleClick(1)}/>
